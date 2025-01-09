@@ -7,13 +7,16 @@ import {
   KBarProvider,
   KBarSearch,
 } from "kbar";
-// import { WorldMapWithMultipleMarkers } from "./components/WorldMapWithMultipleMarkers";
-// import HTMLEditor from "./components/HTMLEditor/HTMLEditor";
-// import { HtmlCodeEditor } from "./components/HtmlCodeEditor";
+import { WorldMapWithMultipleMarkers } from "./components/WorldMapWithMultipleMarkers";
+import { HtmlCodeEditor } from "./components/HtmlCodeEditor";
 import { SelectRecursion } from "./components/SelectRecursion/SelectRecursion";
 import { RenderResults } from "./components/RenderResults/RenderResults";
 
-function App() {
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Join } from "./view/ChatApp/Components/Join/Join";
+import { Chat } from "./view/ChatApp/Components/Chat/Chat";
+
+const App = () => {
   const actions = [
     {
       id: "blog",
@@ -42,17 +45,22 @@ function App() {
         </KBarPositioner>
       </KBarPortal>
       <div>
-        <a href="https://react.dev" target="_blank">
+        <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
+        <h1>Find Solution to Your Daily Problems</h1>
       </div>
-      <h1>Find Solution to You're Daily Problems</h1>
-      {/* <WorldMapWithMultipleMarkers /> */}
-      {/* <HTMLEditor /> */}
-      {/* <HtmlCodeEditor /> */}
-      <SelectRecursion />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Join />} />
+          <Route path="/chat" element={<Chat />} />
+          <Route path="/worldmap" element={<WorldMapWithMultipleMarkers />} />
+          <Route path="/html-editor" element={<HtmlCodeEditor />} />
+          <Route path="/recursion" element={<SelectRecursion />} />
+        </Routes>
+      </Router>
     </KBarProvider>
   );
-}
+};
 
 export default App;
