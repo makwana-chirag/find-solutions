@@ -1,0 +1,1 @@
+export { WorldMapWithMultipleMarkers } from "./WorldMapWithMultipleMarkers";
