@@ -13,8 +13,8 @@ import { SelectRecursion } from "./components/SelectRecursion/SelectRecursion";
 import { RenderResults } from "./components/RenderResults/RenderResults";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Join } from "./view/ChatApp/Components/Join/Join";
-import { Chat } from "./view/ChatApp/Components/Chat/Chat";
+// import { Join } from "./view/ChatApp/Components/Join/Join";
+// import { Chat } from "./view/ChatApp/Components/Chat/Chat";
 
 const App = () => {
   const actions = [
@@ -52,8 +52,6 @@ const App = () => {
       </div>
       <Router>
         <Routes>
-          <Route path="/" element={<Join />} />
-          <Route path="/chat" element={<Chat />} />
           <Route path="/worldmap" element={<WorldMapWithMultipleMarkers />} />
           <Route path="/html-editor" element={<HtmlCodeEditor />} />
           <Route path="/recursion" element={<SelectRecursion />} />
